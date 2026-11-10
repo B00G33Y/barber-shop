@@ -63,3 +63,40 @@ html {scroll-behavior: smooth;}
     .main-nav{display: block; position: static; width: auto;background: none;}
     .main-nav ul{display: flex; gap: 1rem;}
 }
+
+.hero{
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem 1rem;
+    background: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),
+    url("images/hero.jpg") center/cover no-repeat;
+    color: #fff
+}
+
+.hero h1{
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+    
+}
+
+.hero p{
+    max-width: 32rem;
+    margin: 0 auto 1.5rem;
+}
+
+.btn{
+    display: inline-block;
+    padding: 0.9rem 1.6rem;
+    background: #d4a017;
+    color: #111;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 4px;
+}
+
+.btn :hover{
+    background: #f0b82a;
+}
