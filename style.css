@@ -100,3 +100,71 @@ html {scroll-behavior: smooth;}
 .btn :hover{
     background: #f0b82a;
 }
+
+.section{
+    padding: 3rem 1rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.section h2{
+    text-align: center;  
+    margin-bottom: 2rem;
+}
+
+.services-grid{
+    display: grid;
+    gap: 1rem;
+}
+
+.services-card{
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1.2rem;
+    text-align: center;
+}
+
+.services-card .duration {color: #666; margin: 0.3rem 0 0.8rem;}
+.services-card .price{
+    font-weight: bold;
+    font-size: 1.3rem;
+    color: #b8860b;
+}
+
+@media (min-width: 768px){
+    .services-grid{grid-template-columns: repeat(2,1fr);}
+}
+@media (min-width: 1024px){
+    .services-grid{grid-template-columns: repeat(2,1fr);}
+}
+
+.hours-list {
+     list-style:none; 
+     max-width:420px;
+     margin: 0 auto;
+    }
+
+.hours-list li {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.8rem 1rem;
+    border-bottom: 1px solid #ddd;
+}
+
+.hours-list li.today{
+    background: #fff6dd;
+    font-weight: bold;
+}
+
+.address {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #555;
+}
+
+.site-footer {
+    background: #111;
+    color: #fff;
+    text-align: center;
+    padding: 1.5rem 1rem;
+}
