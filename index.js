@@ -61,3 +61,34 @@ hoursList.innerHTML = hours
 
 const footerText =document.getElementById("footerText");
 footerText.textContent = `${new Date().getFullYear()} Sharp Edge Barbers. All rights reserved.`;
+
+const photos =[
+    {src:"images/cut1.jpg", alt:"Fresh fade haircut"},
+    {src:"images/cut2.jpg", alt:"clean beard haircut"},
+    {src:"images/cut3.jpg", alt:"Classic side part"},
+    {src:"images/cut4.jpg", alt:"Kids haircut"},
+];
+
+const sliderImage = document.getElementById("sliderImage");
+const sliderCount = document.getElementById("sliderCount");
+const prevBtn = document.getElementById("prevBtn");
+const nextBtn= document.getElementById("nextBtn");
+
+let current = 0;
+
+function showPhoto (){
+    sliderImage.src =photos[current].src;
+    sliderImage.alt=photos[current].alt;
+    sliderCount.textContent = `${current + 1} / ${photos.length}`;
+}
+
+nextBtn.addEventListener("click", ()=>{
+    current= (current + 1) %photos.length;
+    showPhoto();
+});
+prevBtn.addEventListener("click", ()=>{
+     current= (current - 1 + photos.length) %photos.length;
+    showPhoto();
+});
+
+showPhoto();

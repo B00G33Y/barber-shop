@@ -168,3 +168,38 @@ html {scroll-behavior: smooth;}
     text-align: center;
     padding: 1.5rem 1rem;
 }
+
+.slider{
+    display:flex ;
+    align-items: center;
+    gap: 0.5rem;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.slider img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  max-height: 450px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.slider-btn{
+    flex-shrink: 0;
+    width: 2.5rem;
+    height: 2.5rem;
+    border: none; border-radius: 50%;
+    background: #111; color: #fff;
+    font-size: 1.5rem; cursor: pointer;
+}
+
+.slider-btn hover{
+    background: #333;
+    }
+
+.slider count{
+    text-align: center;
+    margin-top: 0.8rem;
+    color: #666;
+}
