@@ -36,6 +36,57 @@ servicesGrid.innerHTML = services
 
 .join("");
 
+const bookingForm = document.getElementById("bookingForm");
+const serviceSelect = document.getElementById("service");
+const dateInput = document.getElementById("date");
+const formMessage = document.getElementById("formMessage")  ;
+
+serviceSelect.innerHTML = 
+    `<option value="">Selecta a Service</option>`  +
+    services
+    .map(({name, price})  => `<option value= "${name}"> ${name} - ${formatnaira.format(price)} </option>`)
+    .join("");
+
+dateInput.min = new Date().toISOString().split("T")[0];
+
+function setError(id, message){
+    document.getElementById(id).textContent = message
+}
+bookingForm.addEventListener("submit", (event) =>{
+    event.preventDefault();
+    console.log("form submitted")
+    formMessage.textContent="";
+    let valid = true;
+    const name = document.getElementById("name").value.trim();
+    const phone = document.getElementById("phone").value.replace(/\s/g, "");
+
+    setError("nameError","");
+    setError("phoneError","");
+    setError("serviceError","");
+    setError("dateError","");
+})
+if (name.length < 2 ){
+    setError("nameError", "Please enter your full name.");
+    valid = false;
+}
+if (!/^(0|\+234)[789][01]\d{8}$/.test(phone)) {
+    setError("phoneError", "Enter a valid Nigerian number, e.g. 08012345678.");
+    valid = false;
+  }
+  if (!serviceSelect.value) {
+    setError("serviceError", "Please choose a service.");
+    valid = false;
+  }
+  if (!dateInput.value) {
+    setError("dateError", "Please pick a date.");
+    valid = false;
+  }
+
+  if (valid) {
+    formMessage.textContent = `Thanks ${name}! We'll confirm your ${serviceSelect.value} on ${dateInput.value}.`;
+    bookingForm.reset();
+  }
+
 const hours =[
     { day:"Sunday", time:"Closed"},
     { day:"Monday", time:"9:00 AM - 8:00 PM"},

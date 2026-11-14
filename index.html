@@ -48,9 +48,33 @@
         <p class="address">12 Sample Street, Airport Road,Abuja</p>
     </section>
 
+    <section id="Book" class="section">
+        <h2>Book An Appointment</h2>
+        <form id="bookingForm" novalidate>
+            <label for="name">Full name</label>
+            <input type="text" name="" id="name">
+            <p class="error" id="nameError"></p>
+
+            <label for="phone">Phone number</label>
+            <input type="tel" name="" id="phone">
+            <p class="error" id="phoneError"></p>
+
+            <label for="service">Service</label>
+            <select name="" id="service"></select>
+            <p class="error" id="serviceError"></p>
+
+            <label for="date">Preferred date</label>
+            <input type="date" name="" id="date">
+            <p class="error" id="dateError"></p>
+
+            <button type="submit" class="btn">Book now</button>
+            <p id="formMessage"></p>
+        </form>
+    </section>
+
     <footer class="site-footer">
         <p id="footerText"></p>
     </footer>
     <script src="index.js"></script>
-</body>
+ </body>
 </html>
